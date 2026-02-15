@@ -9,7 +9,7 @@ const yourName = "Yojashv";
 // 1. Initial Choice Logic
 function handleInitialChoice(choice) {
     localStorage.setItem('shikhaInitialChoice', choice);
-    fetch("https://formspree.io/f/mbdaozw", {
+    fetch("https://formspree.io/f/xqedqwyb", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ Name: "Shikha", Action: "InitialResponse", Choice: choice })
@@ -132,7 +132,7 @@ if(slider) {
 function submitChoice() {
     const val = slider.value;
     localStorage.setItem('shikhaFinalVal', val);
-    fetch("https://formspree.io/f/mbdaozw", {
+    fetch("https://formspree.io/f/xqedqwyb", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ Name: "Shikha", Percentage: val + "%" })
