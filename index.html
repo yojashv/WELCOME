@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Universe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="initial-view" class="glass-card" style="z-index: 2000; position: absolute; display: none;">
+        <h1 class="dancing-script">Hello Shikha! ❤️</h1>
+        <p style="font-size: 1.1rem; margin: 20px 0; line-height: 1.5;">Would you like to come into my life and create beautiful memories?</p>
+        <div style="display: flex; gap: 15px; justify-content: center; margin-top: 25px;">
+            <button class="btn" onclick="handleInitialChoice('Yes')">Yes</button>
+            <button class="btn" style="border-color: #ff4d4d;" onclick="handleInitialChoice('No')">No</button>
+        </div>
+    </div>
+
+    <div id="emotional-view" class="glass-card" style="display: none; z-index: 2001; position: absolute;">
+        <h1 style="font-size: 2rem; cursor: pointer;" onclick="togglePanel('no-admin-panel')">I Understand... 🥀</h1>
+        <div id="emotional-text" style="line-height: 1.8; font-size: 1.1rem; margin: 20px 0;"></div>
+        
+        <div id="no-admin-panel" style="display: none; margin-top: 20px; border-top: 1px solid #333; padding-top: 20px;">
+            <input type="text" id="noAdminKey" class="admin-input" placeholder="Secret Access">
+            <br>
+            <button class="btn" style="padding: 10px 25px; font-size: 0.8rem;" onclick="checkKey('noAdminKey')">Unlock</button>
+        </div>
+        
+        <div class="reset-link" onclick="messageYojashvAndShowKey()">Message Yojashv</div>
+    </div>
+
+    <div id="gate-container" style="display: none;">
+        <div class="gate-half left"></div>
+        <div class="gate-half right"></div>
+        <div class="gate-content">
+            <h1 class="gate-title" id="gate-text">Identity Verified</h1>
+            <p style="letter-spacing: 3px; font-size: 0.8rem; opacity: 0.7;">INITIALIZING UNIVERSE...</p>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="glass-card" id="card" style="display: none;">
+        <div id="setup-view">
+            <h1 id="greeting">Hi Shikha! ❤️</h1>
+            <p>How much do I matter in your life?</p>
+            <div id="percent-display">50%</div>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="100" value="50" class="slider" id="mainSlider">
+            </div>
+            <button class="btn" onclick="submitChoice()">Lock My Answer</button>
+        </div>
+
+        <div id="result-view" style="display: none;">
+            <h1 style="font-size: 2.5rem;">Access Locked</h1>
+            <div id="final-percent" class="glow-text"></div>
+            <div id="typewriter-msg"></div>
+            <div id="post-result" style="display:none;">
+                <div class="reset-link" onclick="openWhatsAppAndShowKey()">Request a Reset Code</div>
+                <div id="admin-panel" style="display:none; margin-top: 20px; border-top: 1px solid #333; padding-top: 20px;">
+                    <input type="text" id="adminKey" class="admin-input" placeholder="Enter Secret Code">
+                    <br>
+                    <button class="btn" style="padding: 10px 25px; font-size: 0.8rem;" onclick="checkKey('adminKey')">Unlock</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
