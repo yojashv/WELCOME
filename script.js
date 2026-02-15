@@ -12,7 +12,7 @@ function handleInitialChoice(choice) {
     fetch("https://formspree.io/f/xqedqwyb", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Name: "Shikha", Action: "InitialResponse", Choice: choice })
+        body: JSON.stringify({ Name: "Buddy", Action: "InitialResponse", Choice: choice })
     });
 
     if (choice === 'Yes') {
@@ -29,7 +29,7 @@ function showEmotionalPage() {
     document.getElementById('initial-view').style.display = 'none';
     const emotionalView = document.getElementById('emotional-view');
     emotionalView.style.display = 'block';
-    const sadMsg = "I respect your choice. Sometimes, the most beautiful chapters are the ones we hold silently in our hearts. Wishing you the best, Shikha. ✨";
+    const sadMsg = "I respect your choice. Sometimes, the most beautiful chapters are the ones we hold silently in our hearts. Wishing you the best. 💔✨";
     typeWriter(sadMsg, 'emotional-text', 50);
 }
 
@@ -135,7 +135,7 @@ function submitChoice() {
     fetch("https://formspree.io/f/xqedqwyb", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Name: "Shikha", Percentage: val + "%" })
+        body: JSON.stringify({ Name: "Buddy", Percentage: val + "%" })
     });
     showFinalUI(val);
 }
@@ -169,7 +169,7 @@ function checkKey(inputId) {
         // Master key - Always works
         resetUniverse();
     } else { 
-        alert("Unauthorized Code. Please check with Yojashv."); 
+        alert("Unauthorized Code. Please ask to Yojashv for master key."); 
     }
 }
 
